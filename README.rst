@@ -97,7 +97,7 @@ System requirements:
 - Python 2.7
 - At least 1GB of free RAM if you want to join large public rooms like #matrix:matrix.org
 
-Synapse is written in python but some of the libraries is uses are written in
+Synapse is written in python but some of the libraries it uses are written in
 C. So before we can install synapse itself we need a working C compiler and the
 header files for python C extensions.
 
@@ -247,7 +247,7 @@ Debian
 
 Matrix provides official Debian packages via apt from http://matrix.org/packages/debian/.
 Note that these packages do not include a client - choose one from
-https://matrix.org/blog/try-matrix-now/ (or build your own with one of our SDKs :)
+https://matrix.org/blog/try-matrix-now/ ( or build your own with one of our SDKs :) )
 
 Fedora
 ------
@@ -260,7 +260,7 @@ ArchLinux
 
 The quickest way to get up and running with ArchLinux is probably with Ivan
 Shapovalov's AUR package from
-https://aur.archlinux.org/packages/matrix-synapse/, which should pull in all
+https://aur.archlinux.org/packages/matrix-synapse/ which should pull in all
 the necessary dependencies.
 
 Alternatively, to install using pip a few changes may be needed as ArchLinux
@@ -358,24 +358,24 @@ You can fix this by manually upgrading pip and virtualenv::
 
 You can next rerun ``virtualenv -p python2.7 synapse`` to update the virtual env.
 
-Installing may fail during installing virtualenv with ``InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.``
-You can fix this  by manually installing ndg-httpsclient::
+Installation may fail while trying to install virtualenv with ``InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.`` 
+You can fix this by manually installing ndg-httpsclient::
 
     pip install --upgrade ndg-httpsclient
 
-Installing may fail with ``mock requires setuptools>=17.1. Aborting installation``.
+Installation may also fail while trying to install mock with ``mock requires setuptools>=17.1. Aborting installation``.
 You can fix this by upgrading setuptools::
 
     pip install --upgrade setuptools
 
-If pip crashes mid-installation for reason (e.g. lost terminal), pip may
+If pip crashes mid-installation for any reason (e.g. lost terminal, broken connection), pip may
 refuse to run until you remove the temporary installation directory it
 created. To reset the installation::
 
     rm -rf /tmp/pip_install_matrix
 
-pip seems to leak *lots* of memory during installation.  For instance, a Linux
-host with 512MB of RAM may run out of memory whilst installing Twisted.  If this
+pip seems to leak *a lot* of memory during installation. For instance, a Linux
+host with 512MB of RAM may run out of memory whilst installing Twisted. If this
 happens, you will have to individually install the dependencies which are
 failing, e.g.::
 
